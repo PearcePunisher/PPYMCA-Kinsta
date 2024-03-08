@@ -12,13 +12,13 @@ const pagePage = async () => {
 	const pages = await getpages();
 
 	return (
-		<div className="page-page">
+		<div className="blog-page">
 			<h2>All Pages</h2>
 			<p>All pages are fetched from WordPress via the WP REST API.</p>
-			<div className="pages">
+			<div className="posts">
 				{pages.map((page) => {
 					return (
-						<Link href={`/pages/${page.id}`} className="page" key={page.id}>
+						<Link href={`/pages/${page.id}`} className="post" key={page.id}>
 							<h3>{page.title.rendered}</h3>
 							<p
 								dangerouslySetInnerHTML={{ __html: page.excerpt.rendered }}
