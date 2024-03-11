@@ -14,7 +14,7 @@ const pagePage = async () => {
 	return (
 		<div className="blog-page">
 			<h2>All Pages</h2>
-			<p>All pages are fetched from WordPress via the WP REST API.</p>
+			<p>All pages are fetched from WordPress via the WP REST API. This will likely change to being GraphQL soon.</p>
 			<div className="posts">
 				{pages.map((page) => {
 					return (
