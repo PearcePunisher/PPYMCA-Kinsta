@@ -24,6 +24,7 @@ async function fetchAPI(query, { variables } = {}) {
   return json.data;
 }
 
+// Function to fetch all posts, limited to 20, ordered by date in descending order.
 export async function getAllPosts(preview) {
   const data = await fetchAPI(
     `
@@ -45,6 +46,7 @@ export async function getAllPosts(preview) {
   return data?.posts;
 }
 
+// Function to fetch all posts with slugs, limited to 10000.
 export async function getAllPostsWithSlug() {
   const data = await fetchAPI(
     `
@@ -61,6 +63,7 @@ export async function getAllPostsWithSlug() {
   return data?.posts;
 }
 
+// Function to fetch a post by its slug.
 export async function getPost(slug) {
   const data = await fetchAPI(
     `
