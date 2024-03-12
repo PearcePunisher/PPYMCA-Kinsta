@@ -18,7 +18,7 @@ const pagePage = async () => {
 			<div className="posts">
 				{pages.map((page) => {
 					return (
-						<Link href={`/pages/${page.id}`} className="post" key={page.id}>
+						<Link href={`/pages/${page.slug}`} className="post" key={page.id}>
 							<h3>{page.title.rendered}</h3>
 							<p
 								dangerouslySetInnerHTML={{ __html: page.excerpt.rendered }}
