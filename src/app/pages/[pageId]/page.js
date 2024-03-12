@@ -17,10 +17,10 @@ export async function generateStaticParams() {
 // Fetches a single page from the WordPress API based on the page ID
 async function getSinglepage(pageId) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/pages/${pageId}`
+    `${process.env.NEXT_PUBLIC_WORDPRESS_API_URL}/pages?slug=${pageId}`
   );
-  const page = await response.json();
-  return page;
+  const pages = await response.json();
+  return pages.length > 0 ? pages[0] : null;
 }
 
 // Renders the page component
@@ -34,11 +34,20 @@ const page = async ({ params }) => {
   }
 
   // Renders the page component with the page data
+  // return (
+  //   <div className="single-blog-page">
+  //     <h2>{page.title.rendered}</h2>
+  //     <div className="blog-page">
+  //       <p dangerouslySetInnerHTML={{ __html: page.content.rendered }}></p>
+  //     </div>
+  //   </div>
+  // );
+
   return (
     <div className="single-blog-page">
-      <h2>{page.title.rendered}</h2>
+      {page && page.title ? <h2>{page.title.rendered}</h2> : <h2>Loading...</h2>}
       <div className="blog-page">
-        <p dangerouslySetInnerHTML={{ __html: page.content.rendered }}></p>
+        {page && page.content ? <p dangerouslySetInnerHTML={{ __html: page.content.rendered }}></p> : <p>Loading...</p>}
       </div>
     </div>
   );
