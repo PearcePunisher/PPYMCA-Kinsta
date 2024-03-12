@@ -34,15 +34,6 @@ const page = async ({ params }) => {
   }
 
   // Renders the page component with the page data
-  // return (
-  //   <div className="single-blog-page">
-  //     <h2>{page.title.rendered}</h2>
-  //     <div className="blog-page">
-  //       <p dangerouslySetInnerHTML={{ __html: page.content.rendered }}></p>
-  //     </div>
-  //   </div>
-  // );
-
   return (
     <div className="single-blog-page">
       {page && page.title ? <h2>{page.title.rendered}</h2> : <h2>Loading...</h2>}
