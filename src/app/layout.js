@@ -1,5 +1,6 @@
 import Navbar from './navbar';
 import './globals.css';
+import './wp-styles/wp-styles.css';
 
 export const metadata = {
 	title: 'Pikes Peak YMCA - Next.js w/ WordPress',
