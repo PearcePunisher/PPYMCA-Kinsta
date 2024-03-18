@@ -7,6 +7,7 @@ const NavLinks = [
 	{ id: 2, name: 'Blog', path: '/blog' },
   { id: 3, name: 'Pages', path: '/pages' },
   { id: 4, name: 'Contact', path: '/pages/contact' },
+  { id: 5, name: 'WP Login', path: 'https://ymcanext.kinsta.cloud/wp-admin/', target: '_blank'},
 ];
 
 const Navbar = () => {
@@ -28,6 +29,7 @@ const Navbar = () => {
                 <Link
                   href={link.path}
                   className={isActive(link.path) ? 'active' : ''}
+                  target={link.target}
                 >
                   {link.name}
                 </Link>

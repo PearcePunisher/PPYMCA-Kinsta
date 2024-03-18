@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import '@material/web/button/filled-button.js';
 
 const page = () => {
 	return (
@@ -11,6 +12,7 @@ const page = () => {
 			<Link href="/blog" className="btn">
 				Read Blog Posts
 			</Link>
+      <md-filled-button>Complete</md-filled-button>
 		</div>
 	);
 };

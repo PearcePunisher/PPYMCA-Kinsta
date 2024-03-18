@@ -1,3 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cachet Book';
+  src: url('/fonts/CachetW05-Book.woff2') format('woff2');
+}
+
 * {
   margin: 0;
   padding: 0;
