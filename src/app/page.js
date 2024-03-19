@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import '@material/web/button/filled-button.js';
 
 const page = () => {
 	return (
@@ -9,10 +8,9 @@ const page = () => {
 				This combination empowers seamless integration between Next.js and
 				WordPress, providing dynamic and efficient web experiences.
 			</p>
-			<Link href="/blog" className="btn">
+			<Link href="/blog" className="btn bg-sky-500 rounded-full text-white font-display">
 				Read Blog Posts
 			</Link>
-      <md-filled-button>Complete</md-filled-button>
 		</div>
 	);
 };
